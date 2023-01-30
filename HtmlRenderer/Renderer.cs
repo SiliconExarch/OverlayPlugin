@@ -502,6 +502,9 @@ namespace RainbowMage.HtmlRenderer
 
                 // Disable Flash. We don't need it and it can cause issues.
                 cefSettings.CefCommandLineArgs.Remove("enable-system-flash");
+                
+                // Disable web security. Don't do this!
+                cefSettings.CefCommandLineArgs["disable-web-security"] = "1";
 
                 cefSettings.EnableAudio();
 
